@@ -50,7 +50,7 @@ A sample notice is included: `Clarivo_Test_Notice.pdf`.
 Uploaded files are sent to Google's Gemini API so Gemma 4 can read them. Do not upload documents you are not allowed to share with a cloud API.
 
 ## Development notes
-The repository was initialized on 6 October 2026. AI coding assistance was used for setup and changes on 17 October 2026; update this note if additional contributors or work dates need to be credited.
+The repository was created on 6 October 2026. A first draft of the app was generated with AI coding assistants on 10-11 October 2026, before the 13-18 October development window opened. During the window (13-17 October) it was tested, fixed, documented and deployed. AI coding assistants were used throughout.
 
 ## License
 MIT
