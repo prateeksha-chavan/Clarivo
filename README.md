@@ -1,32 +1,56 @@
 # Clarivo
-> From confusion to clear action.
-Clarivo is an AI-powered multimodal assistant that helps users understand confusing documents and figure out what they need to do next.
-It can analyze documents such as college notices, scholarship announcements, forms, PDFs, screenshots, and images.
-## Problem
-Important information is often hidden inside long or complicated documents. Users may understand the words but still not know:
-- What do I need to do?
-- What is the deadline?
-- What documents are required?
-- Are there any important conditions?
-Missing one of these details can cause problems.
-## Solution
-Clarivo converts the information in a document into a simple action plan.
-The user uploads a document and Clarivo identifies:
-- Required actions
-- Deadlines
-- Required documents
-- Important conditions or warnings
-- Supporting information from the original document
-The main goal is simple:
-> **What do I need to do next?**
-## How It Works
-```text
-Upload Document
-       ↓
-Document Processing
-       ↓
-Gemma 4
-       ↓
-Extract Actions & Important Information
-       ↓
-Generate Action Plan
+**From confusion to clear action.**
+
+Clarivo turns confusing documents (notices, scholarship announcements, forms, PDFs) into a clear action plan: what to do, when it is due, which documents to prepare, and what to watch out for.
+
+**Live demo:** _Add the Render URL after deployment._
+
+## Hackathon entry
+Hacktoberfest Hack Day Bengaluru 2026
+- Track: **Best Use of Gemma 4**
+- Problem statement: **G3 - Multimodal AI Intelligence**
+
+## How Gemma 4 is used
+Gemma 4 (`gemma-4-26b-a4b-it`, through the Gemini API) is the core of the app. It reads the uploaded document, including pages that are images or scans, together with a text instruction, and returns structured JSON with a summary, actions, deadlines, required documents and warnings. No other model is in the loop.
+
+## How it works
+1. Upload a PDF or an image.
+2. The FastAPI backend prepares the file (PDF pages are read with PyMuPDF).
+3. Gemma 4 analyses the content and returns structured JSON.
+4. The page shows the result in clear sections.
+
+## Tech stack
+Python, FastAPI, Gemma 4 via the Gemini API (`google-genai`), PyMuPDF, plain HTML/CSS/JavaScript.
+
+## Run it locally
+Requires Python 3.11+ and a Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
+
+```powershell
+git clone https://github.com/prateeksha-chavan/Clarivo.git
+cd Clarivo
+python -m venv venv
+venv\Scripts\activate
+python -m pip install -r requirements.txt
+```
+(macOS/Linux: use `source venv/bin/activate` instead.)
+
+Create a `.env` file:
+```env
+GEMINI_API_KEY=your_key_here
+MODEL_NAME=gemma-4-26b-a4b-it
+```
+
+Start the app and open http://127.0.0.1:8000:
+```powershell
+uvicorn main:app --reload
+```
+A sample notice is included: `Clarivo_Test_Notice.pdf`.
+
+## Privacy
+Uploaded files are sent to Google's Gemini API so Gemma 4 can read them. Do not upload documents you are not allowed to share with a cloud API.
+
+## Development notes
+The repository was initialized on 6 October 2026. AI coding assistance was used for setup and changes on 17 October 2026; update this note if additional contributors or work dates need to be credited.
+
+## License
+MIT
