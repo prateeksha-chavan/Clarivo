@@ -51,6 +51,5 @@ Uploaded files are sent to Google's Gemini API so Gemma 4 can read them. Do not 
 
 ## Development notes
 The repository was created on 6 October 2026. A first draft of the app was generated with AI coding assistants on 10-11 October 2026, before the 13-18 October development window opened. During the window (13-17 October) it was tested, fixed, documented and deployed. AI coding assistants were used throughout.
-
 ## License
 MIT
