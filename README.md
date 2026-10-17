@@ -3,7 +3,7 @@
 
 Clarivo turns confusing documents (notices, scholarship announcements, forms, PDFs) into a clear action plan: what to do, when it is due, which documents to prepare, and what to watch out for.
 
-**Live demo:** https://clarivo-i0v7.onrender.com
+**Live demo:**** https://clarivo-i0v7.onrender.com
 
 ## Hackathon entry
 Hacktoberfest Hack Day Bengaluru 2026
